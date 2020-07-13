@@ -1,20 +1,22 @@
 //
-//  ViewController.swift
+//  GameProcess.swift
 //  Rock, paper, scissors
 //
 //  Created by Константин Стародубцев on 13.07.2020.
 //  Copyright © 2020 Константин Стародубцев. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
+class Game {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    var state: gameStates
+    var botSign: Sign
+    
+        
+    init() {
+        self.state = .start
+        self.botSign = randomSign()
     }
-
-
 }
 
