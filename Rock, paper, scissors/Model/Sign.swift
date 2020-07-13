@@ -10,7 +10,7 @@ import Foundation
 import GameplayKit
 
 // Data types for the "hand" states and proper emoji
-enum Sign {
+enum Sign: CaseIterable {
     case rock, paper, scissors
     
     var emoji: String {
@@ -21,7 +21,6 @@ enum Sign {
         }
     }
 }
-
 
 // randomizer for the bot choice. Method — nextInt() on instance to get an Int
 
@@ -35,4 +34,14 @@ func randomSign () -> Sign {
     case 2: return .scissors
     default: preconditionFailure("Randomizer generated the sign out of range. Need to shrink random or expand sign variants.")
     }
+}
+
+func getSignByEmoji(_ emoji: String) -> Sign {
+    var signFound: Sign = Sign.allCases[0] // это похоже на костыль :(
+    for sign in Sign.allCases {
+        if sign.emoji == emoji {
+            signFound = sign
+        }
+    }
+    return signFound
 }

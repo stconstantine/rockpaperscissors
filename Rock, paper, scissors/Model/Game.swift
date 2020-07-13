@@ -9,10 +9,16 @@
 import Foundation
 
 class Game {
-
-    var state: gameStates
+    enum GameState {
+        case start, win, lose, draw
+    }
+    
+    var state: GameState
     var botSign: Sign
     
+    func gameResult(bot botThrow: Sign, player playerTrow: Sign) -> GameState {
+        return .win
+    }
         
     init() {
         self.state = .start

@@ -15,26 +15,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="x0r-6i-w8j">
-                                <rect key="frame" x="50.5" y="258.5" width="313" height="379.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="x0r-6i-w8j">
+                                <rect key="frame" x="50.5" y="278" width="313" height="284.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🦊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfd-zG-qwq">
-                                        <rect key="frame" x="119" y="0.0" width="75" height="84"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="84"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xnA-3F-ikQ">
-                                        <rect key="frame" x="8.5" y="113" width="296.5" height="64.5"/>
+                                        <rect key="frame" x="0.0" y="104" width="313" height="64.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rock, Paper, Scissors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1a-2E-jlU">
-                                                <rect key="frame" x="0.0" y="0.0" width="296.5" height="36"/>
+                                                <rect key="frame" x="8.5" y="0.0" width="296.5" height="36"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your sign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjO-s9-dHT">
-                                                <rect key="frame" x="81.5" y="44" width="133.5" height="20.5"/>
+                                                <rect key="frame" x="90" y="44" width="133.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="uud-wO-Y6q">
-                                        <rect key="frame" x="0.0" y="206.5" width="313" height="96"/>
+                                        <rect key="frame" x="0.0" y="188.5" width="313" height="96"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vh9-aX-wOM">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="96"/>
@@ -70,26 +70,29 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I43-dw-MEx">
-                                        <rect key="frame" x="90.5" y="331.5" width="132" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Play again"/>
-                                        <connections>
-                                            <action selector="playAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NZM-pR-bj0"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I43-dw-MEx">
+                                <rect key="frame" x="141" y="578" width="132" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Play again"/>
+                                <connections>
+                                    <action selector="playAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NZM-pR-bj0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="x0r-6i-w8j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o3a-U4-89q"/>
-                            <constraint firstItem="x0r-6i-w8j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xPd-tA-ZrU"/>
+                            <constraint firstItem="I43-dw-MEx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="154" id="0Zg-8j-QwR"/>
+                            <constraint firstItem="x0r-6i-w8j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-27.75" id="9wk-nT-720"/>
+                            <constraint firstItem="I43-dw-MEx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Etk-Qd-dtO"/>
+                            <constraint firstItem="x0r-6i-w8j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GPO-B4-gfU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="botChoice" destination="Dfd-zG-qwq" id="9hM-jm-J3I"/>
+                        <outlet property="playAgainButton" destination="I43-dw-MEx" id="dwI-bf-O3x"/>
                         <outlet property="statusLine" destination="P1a-2E-jlU" id="wl2-ku-Kpt"/>
                         <outlet property="statusSubline" destination="JjO-s9-dHT" id="W51-kW-fkP"/>
                         <outletCollection property="playerSigns" destination="00z-65-baF" collectionClass="NSMutableArray" id="Q0h-Ty-MTQ"/>

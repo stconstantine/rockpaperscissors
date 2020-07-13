@@ -14,8 +14,7 @@
 		B592C73D24BC7CC000480581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B592C73C24BC7CC000480581 /* Assets.xcassets */; };
 		B592C74024BC7CC000480581 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B592C73E24BC7CC000480581 /* LaunchScreen.storyboard */; };
 		B592C74C24BC7F4900480581 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = B592C74B24BC7F4900480581 /* Sign.swift */; };
-		B592C75024BC818300480581 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B592C74F24BC818300480581 /* GameStates.swift */; };
-		B592C75424BC958700480581 /* GameProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B592C75324BC958700480581 /* GameProcess.swift */; };
+		B592C75424BC958700480581 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B592C75324BC958700480581 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +28,7 @@
 		B592C74124BC7CC000480581 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B592C74724BC7CC800480581 /* Rock, paper, scissors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rock, paper, scissors.entitlements"; sourceTree = "<group>"; };
 		B592C74B24BC7F4900480581 /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
-		B592C74F24BC818300480581 /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
-		B592C75324BC958700480581 /* GameProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcess.swift; sourceTree = "<group>"; };
+		B592C75324BC958700480581 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				B592C74B24BC7F4900480581 /* Sign.swift */,
-				B592C75324BC958700480581 /* GameProcess.swift */,
-				B592C74F24BC818300480581 /* GameStates.swift */,
+				B592C75324BC958700480581 /* Game.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,8 +172,7 @@
 			files = (
 				B592C73824BC7CBD00480581 /* ViewController.swift in Sources */,
 				B592C73424BC7CBD00480581 /* AppDelegate.swift in Sources */,
-				B592C75024BC818300480581 /* GameStates.swift in Sources */,
-				B592C75424BC958700480581 /* GameProcess.swift in Sources */,
+				B592C75424BC958700480581 /* Game.swift in Sources */,
 				B592C74C24BC7F4900480581 /* Sign.swift in Sources */,
 				B592C73624BC7CBD00480581 /* SceneDelegate.swift in Sources */,
 			);
