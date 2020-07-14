@@ -13,6 +13,8 @@
 		B592C73B24BC7CBD00480581 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B592C73924BC7CBD00480581 /* Main.storyboard */; };
 		B592C73D24BC7CC000480581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B592C73C24BC7CC000480581 /* Assets.xcassets */; };
 		B592C74024BC7CC000480581 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B592C73E24BC7CC000480581 /* LaunchScreen.storyboard */; };
+		B592C74C24BC7F4900480581 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = B592C74B24BC7F4900480581 /* Sign.swift */; };
+		B592C75424BC958700480581 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B592C75324BC958700480581 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,9 @@
 		B592C73C24BC7CC000480581 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B592C73F24BC7CC000480581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B592C74124BC7CC000480581 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B592C74724BC7CC800480581 /* Rock, paper, scissors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rock, paper, scissors.entitlements"; sourceTree = "<group>"; };
+		B592C74B24BC7F4900480581 /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
+		B592C75324BC958700480581 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +61,42 @@
 		B592C73224BC7CBD00480581 /* Rock, paper, scissors */ = {
 			isa = PBXGroup;
 			children = (
+				B592C74824BC7CF300480581 /* Model */,
+				B592C74924BC7CFA00480581 /* View */,
+				B592C74A24BC7CFE00480581 /* Controller */,
+				B592C74724BC7CC800480581 /* Rock, paper, scissors.entitlements */,
 				B592C73324BC7CBD00480581 /* AppDelegate.swift */,
 				B592C73524BC7CBD00480581 /* SceneDelegate.swift */,
-				B592C73724BC7CBD00480581 /* ViewController.swift */,
-				B592C73924BC7CBD00480581 /* Main.storyboard */,
 				B592C73C24BC7CC000480581 /* Assets.xcassets */,
-				B592C73E24BC7CC000480581 /* LaunchScreen.storyboard */,
 				B592C74124BC7CC000480581 /* Info.plist */,
 			);
 			path = "Rock, paper, scissors";
+			sourceTree = "<group>";
+		};
+		B592C74824BC7CF300480581 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B592C74B24BC7F4900480581 /* Sign.swift */,
+				B592C75324BC958700480581 /* Game.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B592C74924BC7CFA00480581 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B592C73924BC7CBD00480581 /* Main.storyboard */,
+				B592C73E24BC7CC000480581 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B592C74A24BC7CFE00480581 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B592C73724BC7CBD00480581 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +172,8 @@
 			files = (
 				B592C73824BC7CBD00480581 /* ViewController.swift in Sources */,
 				B592C73424BC7CBD00480581 /* AppDelegate.swift in Sources */,
+				B592C75424BC958700480581 /* Game.swift in Sources */,
+				B592C74C24BC7F4900480581 /* Sign.swift in Sources */,
 				B592C73624BC7CBD00480581 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +318,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Rock, paper, scissors/Rock, paper, scissors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JUZY3KJRDX;
 				INFOPLIST_FILE = "Rock, paper, scissors/Info.plist";
@@ -293,6 +328,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Starodubtsev.Rock--paper--scissors";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Rock, paper, scissors/Rock, paper, scissors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JUZY3KJRDX;
 				INFOPLIST_FILE = "Rock, paper, scissors/Info.plist";
@@ -311,6 +348,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Starodubtsev.Rock--paper--scissors";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
