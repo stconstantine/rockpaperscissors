@@ -14,15 +14,19 @@ class Game {
     }
     
     var state: GameState
-    var botSign: Sign
+    var botSign, playerSign: Sign
     
     func gameResult(bot botThrow: Sign, player playerTrow: Sign) -> GameState {
-        return .win
+        if botThrow == playerTrow {return .draw}
+        else if botThrow.strongerThen == playerTrow {return .lose}
+        else if playerTrow.strongerThen == botThrow {return .win}
+        preconditionFailure("Error in gameResult func. Unable to select a winner")
     }
         
     init() {
         self.state = .start
         self.botSign = randomSign()
+        self.playerSign = randomSign()
     }
 }
 

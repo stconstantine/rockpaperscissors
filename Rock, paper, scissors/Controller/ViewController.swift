@@ -18,6 +18,7 @@ class ViewController: UIViewController {
       }
       
     @IBOutlet weak var botChoice: UILabel!
+    @IBOutlet weak var playerChoice: UILabel!
     @IBOutlet weak var statusLine: UILabel!
     @IBOutlet weak var statusSubline: UILabel!
     @IBOutlet var playerSigns: [UIButton]!
@@ -26,10 +27,12 @@ class ViewController: UIViewController {
     func updateState (for currentState: Game.GameState) {
         switch currentState {
         case .start: do {
-            // TODO: make a loop and independent of Sign count
-            playerSigns[0].setTitle(Sign.allCases[0].emoji, for: .normal)
-            playerSigns[1].setTitle(Sign.allCases[1].emoji, for: .normal)
-            playerSigns[2].setTitle(Sign.allCases[2].emoji, for: .normal)
+            view.backgroundColor = .systemBackground
+            for index in 0..<playerSigns.count {
+                playerSigns[index].isHidden = false
+                playerSigns[index].setTitle(Sign.allCases[index].emoji, for: .normal)
+            }
+            playerChoice.isHidden = true
             botChoice.text = botFace
             statusLine.text = "Rock, Paper, Scissors"
             statusSubline.text = "Choose your sign"
@@ -37,32 +40,40 @@ class ViewController: UIViewController {
             return
             }
         case .win: do {
+            view.backgroundColor = .systemGreen
             statusLine.text = "You won!"
             statusSubline.text = "Give me a chance, try again!"
             }
         case .lose: do {
-           statusLine.text = "You loose!"
+            view.backgroundColor = .systemRed
+            statusLine.text = "You loose!"
+            statusSubline.text = "Let try again!"
+            }
+        case .draw: do {
+           view.backgroundColor = .systemYellow
+           statusLine.text = "Hm, it's a draw!"
            statusSubline.text = "Let try again!"
            }
-        case .draw: do {
-          statusLine.text = "Hm, it's a draw!"
-          statusSubline.text = "Let try again!"
-          }
         }
         botChoice.text = game.botSign.emoji
         playAgainButton.isHidden = false
     }
+    
+    @IBAction func signThrow(_ sender: UIButton) {
+
+        game.botSign = randomSign()
+        game.playerSign = getSignByEmoji(sender.currentTitle!) //TODO: to make proper unwrap here
+        game.state = game.gameResult(bot: game.botSign, player: game.playerSign)
+        for index in 0..<playerSigns.count {
+            playerSigns[index].isHidden = true
+        }
+        playerChoice.text = game.playerSign.emoji
+        playerChoice.isHidden = false
+        updateState(for: game.state)
+      }
 
     @IBAction func playAgain(_ sender: UIButton) {
         updateState(for: .start)
     }
     
-    @IBAction func signThrow(_ sender: UIButton) {
-  
-        game.state = game.gameResult(bot: randomSign(), player: getSignByEmoji(sender.currentTitle!)) //TODO: to make proper unwrap unwrap
-        updateState(for: game.state)
-
-    }
-    
 }
-
