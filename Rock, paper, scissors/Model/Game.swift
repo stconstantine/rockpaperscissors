@@ -20,7 +20,7 @@ class Game {
         if botThrow == playerTrow {return .draw}
         else if botThrow.strongerThen == playerTrow {return .lose}
         else if playerTrow.strongerThen == botThrow {return .win}
-        preconditionFailure("Error in gameResult func. Unable to select a winner")
+        preconditionFailure("Error in gameResult func. Failed to choose a winner")
     }
         
     init() {
