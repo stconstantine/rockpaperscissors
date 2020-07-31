@@ -9,8 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let botFace = "🦊"
-    lazy var game = Game()
+    lazy var game = Game(botSign: Sign(emoji: botChoice.text ?? ""), playerSign: Sign(emoji: playerChoice.text ?? ""))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +17,7 @@ class ViewController: UIViewController {
       }
       
     @IBOutlet weak var botChoice: UILabel!
+    @IBOutlet weak var botFace: UILabel!
     @IBOutlet weak var playerChoice: UILabel!
     @IBOutlet weak var statusLine: UILabel!
     @IBOutlet weak var statusSubline: UILabel!
@@ -33,7 +33,8 @@ class ViewController: UIViewController {
                 playerSigns[index].setTitle(Sign.allCases[index].emoji, for: .normal)
             }
             playerChoice.isHidden = true
-            botChoice.text = botFace
+            botChoice.isHidden = true
+            botFace.isHidden = false
             statusLine.text = "Rock, Paper, Scissors"
             statusSubline.text = "Choose your sign"
             playAgainButton.isHidden = true
@@ -56,6 +57,8 @@ class ViewController: UIViewController {
            }
         }
         botChoice.text = game.botSign.emoji
+        botChoice.isHidden = false
+        botFace.isHidden = true
         playAgainButton.isHidden = false
     }
     

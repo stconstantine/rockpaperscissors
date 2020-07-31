@@ -8,10 +8,6 @@
 
 import Foundation
 
-
-// Data types for the "hand" signs and proper emoji
-// May be i should used Dictionary here instead enum...
-
 enum Sign: CaseIterable {
     case rock, paper, scissors
     var emoji: String {
@@ -21,12 +17,16 @@ enum Sign: CaseIterable {
         case .scissors: return "✌🏼"
         }
     }
-    var strongerThen: Sign {
+    
+    func beats(_ otherSign: Sign) -> Bool {
         switch self {
-        case .rock: return .scissors
-        case .paper: return .rock
-        case .scissors: return .paper
-        }
+        case .rock:
+            return otherSign == .scissors
+        case .paper:
+            return otherSign == .rock
+        case .scissors:
+            return otherSign == .paper
+         }
     }
     
     init (emoji: String) {

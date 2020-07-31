@@ -15,13 +15,16 @@ struct Game {
     }
     
     var state: GameState
-    var botSign: Sign = .rock, playerSign: Sign = .rock
+    var botSign, playerSign: Sign
     
     func gameResult(bot botThrow: Sign, player playerTrow: Sign) -> GameState {
-        if botThrow == playerTrow {return .draw}
-        else if botThrow.strongerThen == playerTrow {return .lose}
-        else if playerTrow.strongerThen == botThrow {return .win}
-        preconditionFailure("Error in gameResult func. Failed to choose a winner")
+        if botThrow.beats(playerTrow) {
+            return .lose
+        } else if playerTrow.beats(botThrow) {
+            return .win
+        } else {
+            return .draw
+        }
     }
     
     let randomChoice = GKRandomDistribution(lowestValue: 0, highestValue: Sign.allCases.count-1)
@@ -36,8 +39,10 @@ struct Game {
         }
     }
     
-    init() {
+    init(botSign: Sign, playerSign: Sign) {
         self.state = .start
+        self.botSign = botSign
+        self.playerSign = playerSign
     }
 }
 
