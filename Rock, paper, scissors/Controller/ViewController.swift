@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     @IBAction func signThrow(_ sender: UIButton) {
 
         game.botSign = game.randomSign()
-        game.playerSign = getSignByEmoji(sender.currentTitle ?? "") // is it OK?
+        game.playerSign = Sign(emoji: sender.currentTitle ?? "")
         game.state = game.gameResult(bot: game.botSign, player: game.playerSign)
         for index in 0..<playerSigns.count {
             playerSigns[index].isHidden = true

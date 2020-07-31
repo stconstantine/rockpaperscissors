@@ -8,7 +8,8 @@
 
 import Foundation
 import GameplayKit
-class Game {
+
+struct Game {
     enum GameState {
         case start, win, lose, draw
     }
@@ -23,7 +24,7 @@ class Game {
         preconditionFailure("Error in gameResult func. Failed to choose a winner")
     }
     
-    let randomChoice = GKRandomDistribution(lowestValue: 0, highestValue: 2)
+    let randomChoice = GKRandomDistribution(lowestValue: 0, highestValue: Sign.allCases.count-1)
     
     func randomSign () -> Sign {
         let sign = randomChoice.nextInt()

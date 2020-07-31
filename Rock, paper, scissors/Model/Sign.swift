@@ -28,13 +28,14 @@ enum Sign: CaseIterable {
         case .scissors: return .paper
         }
     }
-}
-
-func getSignByEmoji(_ emoji: String) -> Sign {
-    for sign in Sign.allCases {
-        if sign.emoji == emoji {
-            return sign
+    
+    init (emoji: String) {
+        switch emoji {
+        case "👊🏼": self = .rock
+        case "✋🏼": self = .paper
+        case "✌🏼": self = .scissors
+        default: fatalError("Sign init(): recieved emoji, that didn't correspond to any sign")
         }
     }
-    preconditionFailure("Somewhy coudn't identify the sign by its emodji. May be emodji is wrong.")
+    
 }
