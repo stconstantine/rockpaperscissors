@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     let botFace = "🦊"
-    var game = Game()
+    lazy var game = Game()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     
     @IBAction func signThrow(_ sender: UIButton) {
 
-        game.botSign = randomSign()
+        game.botSign = game.randomSign()
         game.playerSign = getSignByEmoji(sender.currentTitle ?? "") // is it OK?
         game.state = game.gameResult(bot: game.botSign, player: game.playerSign)
         for index in 0..<playerSigns.count {

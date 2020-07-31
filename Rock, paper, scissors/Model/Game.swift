@@ -7,14 +7,14 @@
 //
 
 import Foundation
-
+import GameplayKit
 class Game {
     enum GameState {
         case start, win, lose, draw
     }
     
     var state: GameState
-    var botSign, playerSign: Sign
+    var botSign: Sign = .rock, playerSign: Sign = .rock
     
     func gameResult(bot botThrow: Sign, player playerTrow: Sign) -> GameState {
         if botThrow == playerTrow {return .draw}
@@ -22,11 +22,21 @@ class Game {
         else if playerTrow.strongerThen == botThrow {return .win}
         preconditionFailure("Error in gameResult func. Failed to choose a winner")
     }
-        
+    
+    let randomChoice = GKRandomDistribution(lowestValue: 0, highestValue: 2)
+    
+    func randomSign () -> Sign {
+        let sign = randomChoice.nextInt()
+        switch sign {
+        case 0: return .rock
+        case 1: return .paper
+        case 2: return .scissors
+        default: preconditionFailure("Randomizer generated the sign out of available range. Need to shrink random or expand sign variants.")
+        }
+    }
+    
     init() {
         self.state = .start
-        self.botSign = randomSign()
-        self.playerSign = randomSign()
     }
 }
 
