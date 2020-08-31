@@ -9,8 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    lazy var game = Game(botSign: Sign(emoji: botChoice.text ?? ""), playerSign: Sign(emoji: playerChoice.text ?? ""))
-
+    
+//    lazy var game = Game(botSign: Sign(emoji: botChoice.text ?? ""), playerSign: Sign(emoji: playerChoice.text ?? ""))
+    
+    lazy var game = Game()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateState(for: .start)
@@ -56,21 +59,24 @@ class ViewController: UIViewController {
            statusSubline.text = "Let try again!"
            }
         }
-        botChoice.text = game.botSign.emoji
+        botChoice.text = game.botSign?.emoji
         botChoice.isHidden = false
         botFace.isHidden = true
         playAgainButton.isHidden = false
     }
     
     @IBAction func signThrow(_ sender: UIButton) {
-
+        
+        guard let currentTitle = sender.currentTitle, let playerSign = Sign(emoji: currentTitle)  else {print("oops! in signThrow"); return}
+        
         game.botSign = game.randomSign()
-        game.playerSign = Sign(emoji: sender.currentTitle ?? "")
-        game.state = game.gameResult(bot: game.botSign, player: game.playerSign)
+        game.playerSign = playerSign
+        
+        game.state = game.gameResult(bot: game.botSign!, player: game.playerSign!)
         for index in 0..<playerSigns.count {
             playerSigns[index].isHidden = true
         }
-        playerChoice.text = game.playerSign.emoji
+        playerChoice.text = game.playerSign?.emoji
         playerChoice.isHidden = false
         updateState(for: game.state)
       }

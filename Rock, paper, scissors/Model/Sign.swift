@@ -29,12 +29,12 @@ enum Sign: CaseIterable {
          }
     }
     
-    init (emoji: String) {
+    init? (emoji: String) {
         switch emoji {
         case "👊🏼": self = .rock
         case "✋🏼": self = .paper
         case "✌🏼": self = .scissors
-        default: fatalError("Sign init(): recieved emoji, that didn't correspond to any sign")
+        default: return nil //fatalError("Sign init(): recieved emoji, that didn't correspond to any sign")
         }
     }
     

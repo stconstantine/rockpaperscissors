@@ -15,7 +15,7 @@ struct Game {
     }
     
     var state: GameState
-    var botSign, playerSign: Sign
+    var botSign: Sign?, playerSign: Sign?
     
     func gameResult(bot botThrow: Sign, player playerTrow: Sign) -> GameState {
         if botThrow.beats(playerTrow) {
@@ -39,10 +39,8 @@ struct Game {
         }
     }
     
-    init(botSign: Sign, playerSign: Sign) {
+    init() {
         self.state = .start
-        self.botSign = botSign
-        self.playerSign = playerSign
     }
 }
 
